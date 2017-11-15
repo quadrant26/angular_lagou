@@ -1,0 +1,31 @@
+{
+  "name": "angular_lagou",
+  "version": "1.0.0",
+  "description": "angular lagou",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quadrant26/angular_lagou.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quadrant26/angular_lagou/issues"
+  },
+  "homepage": "https://github.com/quadrant26/angular_lagou#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-less": "^3.1.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-uglify": "^2.0.0",
+    "open": "^0.0.5"
+  }
+}
