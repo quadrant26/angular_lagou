@@ -1,0 +1,20 @@
+{
+  "name": "angular_lagou",
+  "description": "angular lagou",
+  "main": "index.js",
+  "authors": [
+    "quadrant26 <quadrant26@163.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/quadrant26/angular_lagou",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.8"
+  }
+}
