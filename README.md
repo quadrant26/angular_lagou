@@ -1,14 +1,16 @@
 # angular_lagou
 angular lagou
 
-project begin
+1. project begin
 
     install packages
 
         npm install
         bower install
     
-    port localhost://3000
+    port 
+
+        open: localhost://3000
 
     gulp test method
 
@@ -23,13 +25,13 @@ project begin
         gulp || gulp server
 
 
-1. controller
+2. controller
 
         angualr.module('app').controller('controlName', [arg1, arg2, function (arg1, arg2){
 
         }])
 
-2. directive
+3. directive
 
         angular.module('app').directive('appTagName', [function (){
 
@@ -41,7 +43,7 @@ project begin
 
         }])
 
-3. ui.router
+4. nagular ui-router
 
         angular.module('app').config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider){
             $stateProvider.state('routername', {
