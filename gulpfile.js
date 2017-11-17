@@ -58,7 +58,7 @@ gulp.task('image', function (){
 gulp.task('build', ['image', 'js', 'less', 'lib', 'html', 'json']);
 
 // 创建服务器
-gulp.task('server', function (){
+gulp.task('server', ['build'], function (){
     $.connect.server({
         root : [app.devPath],
         livereload : true,
