@@ -48,7 +48,7 @@ gulp.task('js', function (){
 })
 
 gulp.task('image', function (){
-    gulp.src(app.srcPath + 'images/**/*')
+    gulp.src(app.srcPath + 'image/**/*')
     .pipe(gulp.dest(app.devPath + 'image'))
     .pipe($.imagemin()) // 图片压缩
     .pipe(gulp.dest(app.prdPath + 'image'))
