@@ -1,6 +1,6 @@
-var gulp = require("gulp");
-var $ = require("gulp-load-plugins")();
-var open = require("open");
+var gulp = require('gulp');
+var $ = require('gulp-load-plugins')();
+var open = require('open');
 
 var app = {
     srcPath : 'src/',
@@ -15,21 +15,21 @@ gulp.task('lib', function (){
     .pipe($.connect.reload());  // 刷新浏览器
 })
 
-gulp.task("html", function (){
-    gulp.src(app.srcPath + "**/*.html")
+gulp.task('html', function (){
+    gulp.src(app.srcPath + '**/*.html')
     .pipe(gulp.dest(app.devPath))
     .pipe(gulp.dest(app.prdPath)) // 发布到成产环境
     .pipe($.connect.reload());
 })
 
-gulp.task("json", function (){
-    gulp.src(app.srcPath + "data/**/*.json")
+gulp.task('json', function (){
+    gulp.src(app.srcPath + 'data/**/*.json')
     .pipe(gulp.dest(app.devPath + 'data'))
     .pipe(gulp.dest(app.prdPath + 'data')) // 发布到成产环境
     .pipe($.connect.reload());
 })
 
-gulp.task("less", function (){
+gulp.task('less', function (){
     gulp.src(app.srcPath + 'style/index.less')
     .pipe($.less()) // 编译 less
     .pipe(gulp.dest( app.devPath + 'css' )) 
@@ -38,8 +38,8 @@ gulp.task("less", function (){
     .pipe($.connect.reload());
 })
 
-gulp.task("js", function (){
-    gulp.src(app.srcPath + "script/**/8.js")
+gulp.task('js', function (){
+    gulp.src(app.srcPath + 'script/**/*.js')
     .pipe($.concat('index.js')) // 合并js
     .pipe(gulp.dest(app.devPath + 'js'))
     .pipe($.uglify()) // js 压缩
@@ -47,26 +47,26 @@ gulp.task("js", function (){
     .pipe($.connect.reload());
 })
 
-gulp.task("image", function (){
-    gulp.src(app.srcPath + 'images/**')
+gulp.task('image', function (){
+    gulp.src(app.srcPath + 'images/**/*')
     .pipe(gulp.dest(app.devPath + 'image'))
     .pipe($.imagemin()) // 图片压缩
     .pipe(gulp.dest(app.prdPath + 'image'))
     .pipe($.connect.reload());
 })
 
-gulp.task("build", ['images', 'js', 'less', 'lib', 'html', 'json']);
+gulp.task('build', ['image', 'js', 'less', 'lib', 'html', 'json']);
 
 // 创建服务器
 gulp.task('server', function (){
     $.connect.server({
         root : [app.devPath],
         livereload : true,
-        port : 9898
+        port : 3000
     })
 
     // 打开浏览器
-    open("http://localhost:9898");
+    open('http://localhost:3000');
 
     // 
     gulp.watch('bower_components/**/*', ['lib']);
@@ -79,7 +79,7 @@ gulp.task('server', function (){
 })
 
 // 清除目录
-gulp.task("clean", function (){
+gulp.task('clean', function (){
     gulp.src([app.devPath, app.prdPath])
     .pipe($.clean())
 })
