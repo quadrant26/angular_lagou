@@ -10,7 +10,7 @@ project begin
     
     port localhost://3000
 
-    test
+    gulp test method
 
         gulp json/js/less/image/lib/html
 
@@ -33,13 +33,13 @@ project begin
 
         angular.module('app').directive('appTagName', [function (){
 
-        return {
-            restrict: 'name',
-            replace: true,
-            templateUrl: 'path
-        }
+            return {
+                restrict: 'name',
+                replace: true,
+                templateUrl: 'path
+            }
 
-    }])
+        }])
 
 3. ui.router
 
