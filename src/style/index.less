@@ -1,6 +1,9 @@
 @import 'template/head.less';
 @import 'template/foot.less';
 @import 'template/positionList.less';
+@import 'template/positionInfo.less';
+@import 'template/company.less';
+@import 'position.less';
 @import 'property.less';
 
 .fs(@px) {
@@ -55,10 +58,15 @@ html, body{
     width:100%; height:100%; margin:0;
 }
 
-body, html, a, img, span, b, div, p, h1, h2, h3, h4, h5, h6, table, tbody, tfoot, thead, th, td, tr, strong, em, section, form, input, select, option, header, nav, footer, ul, li, dl, dt, dd, ol, label, textarea, button{ padding: 0; margin: 0; font-family: "Microsoft YaHei";}
+body, html, a, img, span, b, div, p, h1, h2, h3, h4, h5, h6, table, tbody, tfoot, thead, th, td, tr, strong, em, section, form, input, select, option, header, nav, footer, ul, li, dl, dt, dd, ol, label, textarea, button{ font-family: "Microsoft YaHei";}
 ul, li, dd, dt, dl, ol { list-style: none; }
 
 body{
     background-color:@bodyBgColor;
     .fs(16);
 }
+
+button {
+    border-width: 0;
+    outline-width: 0;
+  }
