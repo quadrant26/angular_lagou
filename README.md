@@ -38,7 +38,10 @@ angular lagou
             return {
                 restrict: 'name',
                 replace: true,
-                templateUrl: 'path
+                templateUrl: 'path,
+                scope: {
+                    data : '='
+                }
             }
 
         }])
