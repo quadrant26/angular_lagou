@@ -7,6 +7,10 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function (
         url : '/main',
         templateUrl: 'view/main.html',
         controller: 'mainCtrl'
+    }).state('position', {
+        url: '/position/:id',
+        templateUrl: 'view/position.html',
+        constroller: 'positionCtrl'
     })
 
     // 设置默认路径
