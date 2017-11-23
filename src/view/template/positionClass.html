@@ -1,12 +1,11 @@
 <div class="position-class">
-    <h5>职位分类</h5>
-    <button class="active">技术</button><button>运营</button>
-    <ul>
-      <li class="p-r">
-        <p>name</p>
-        <p>2017年11月23日 10:42:13</p>
-        <spanclass="p-a">salary</span>
-      </li>
-    </ul>
-  </div>
-  
+  <h5>职位分类</h5>
+  <button class="active" ng-repeat="item in com.positionClass" ng-bind="item.name"></button>
+  <ul>
+    <li class="p-r" ng-repeat="pos in compositionClass">
+      <p ng-bind="pos.name"></p>
+      <p ng-bind="pos.createDate"></p>
+      <span class="p-a" ng-bind="pos.salary"></span>
+    </li>
+  </ul>
+</div>
