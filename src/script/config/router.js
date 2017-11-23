@@ -10,11 +10,11 @@ angular.module('app').config(['$stateProvider', '$urlRouterProvider', function (
     }).state('position', {
         url: '/position/:id',
         templateUrl: 'view/position.html',
-        constroller: 'positionCtrl'
+        controller: 'positionCtrl'
     }).state('company', {
         url: '/company/:id',
         templateUrl: 'view/company.html',
-        constroller: 'companyCtrl'
+        controller: 'companyCtrl'
     })
 
     // 设置默认路径
