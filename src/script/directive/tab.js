@@ -7,7 +7,16 @@ angular.module('app').directive('appTab', [function ($scope){
         templateUrl: 'view/template/tab.html',
         scope: {
             list: '=',
-            tab: '='
+            tab: '=',
+            tabClick: '&'
+        },
+        link: function ($scope){
+            $scope.click = function (tab){
+                // 点击行高亮设置
+                $scope.selectId = tab.id;
+                // searchCtrl 操作
+                $scope.tabClick(tab);
+            }
         }
     }
 }])
