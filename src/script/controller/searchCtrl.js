@@ -26,6 +26,7 @@ angular.module('app').controller('searchCtrl', ['dict', '$http', '$scope', funct
     $scope.sheet = {};
 
     var tabId = '';
+    $scope.filterObj = {};
     $scope.tClick = function (id, name){
         tabId = id;
         $scope.sheet.list = dict[id];
@@ -41,7 +42,10 @@ angular.module('app').controller('searchCtrl', ['dict', '$http', '$scope', funct
                     item.name = name;
                 }
             });
+            $scope.filterObj[tabId + 'Id'] = id;
+            console.log($scope.filterObj);
         }else{
+            delete $scope.filterObj[tabId + 'Id']
             angular.forEach($scope.tabList, function (item){
                 if( item.id === tabId ){
                     switch(item.id){
