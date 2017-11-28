@@ -6,7 +6,8 @@ angular.module('app').directive('appTab', [function ($scope){
         replace: true,
         templateUrl: 'view/template/tab.html',
         scope: {
-            list: '='
+            list: '=',
+            tab: '='
         }
     }
 }])
