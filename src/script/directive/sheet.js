@@ -6,7 +6,9 @@ angular.module('app').directive('appSheet', function (){
         replace: true,
         templateUrl: 'view/template/sheet.html',
         scope: {
-            visiable: '='
+            visiable: '=',
+            list: "=",
+            select: '&'
         }
     }
 })
