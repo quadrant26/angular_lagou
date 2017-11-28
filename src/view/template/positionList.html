@@ -5,7 +5,7 @@
         <p class="text">BMP能存透明么?JPEG呢?</p>
         <p class="text">2016-06-01 11:05</p>
     </li> -->
-    <li ui-sref="position({id: item.id})" class="item" ng-repeat="item in data">
+    <li ui-sref="position({id: item.id})" class="item p-r" ng-repeat="item in data|filterByObj:filterObj">
         <img ng-src="{{item.imageUrl}}" class="f-l logo" alt="">
         <h3 class="title" ng-bind="item.companyName"></h3>
         <p class="text" ng-bind="item.companyName+'['+item.cityName+']'+' '+item.industryName +' '+item.scaleName"></p>
