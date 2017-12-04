@@ -6,7 +6,7 @@ angular.module('app').filter('filterByObj', [function (){
         angular.forEach(list, function (item){
             var isEqual = true;
             for(var e in obj){
-                if(item[e] === obj[e]){
+                if(item[e] !== obj[e]){
                     isEqual = false;
                 }
             }
