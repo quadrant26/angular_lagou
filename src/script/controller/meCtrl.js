@@ -1,5 +1,17 @@
 'use strict';
 
-angular.module('app').controller('meCtrl', ['$http', '$scope', function ($http, $scope){
-    $scope.name = true;
+angular.module('app').controller('meCtrl', ['$state', 'cache', '$http', '$scope', function ($state, cache, $http, $scope){
+
+    if( cache.get('name') ){
+        $scope.name = cache.get('name');
+        $scope.image = cache.get('image');
+        $scope.id = cache.get('id');
+    };
+
+    $scope.logout = function (){
+        cache.remove('id');
+        cache.remove('image');
+        cache.remove('name');
+        $state.go('main');
+    }
 }])
