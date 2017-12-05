@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').directive('appPositionList', [function (){
+angular.module('app').directive('appPositionList', ['$http', function ($http){
     return {
         restrict: 'A',
         replace: true,
@@ -8,6 +8,16 @@ angular.module('app').directive('appPositionList', [function (){
         scope: {
             data: '=',
             filterObj: '='
+        },
+        link: function ($scope){
+            $scope.select = function (item){
+                $http.get('/data/favorite.json', {
+                    id: item.id,
+                    select: !item.select
+                }).success(function(resq){
+                    item.select = !item.select;
+                });
+            }
         }
     }
 }])
