@@ -1,8 +1,9 @@
 'use strict';
 
-angular.module('app').controller('positionCtrl', ['$q', '$http', '$state', '$scope', function ($q, $http, $state, $scope){
+angular.module('app').controller('positionCtrl', ['$log', '$q', '$http', '$state', '$scope', 'cache', function ($log, $q, $http, $state, $scope, cache){
 
-    $scope.isLogin = false;
+    $scope.isLogin = cache.get('name') || '';
+    $scope.message = $scope.isLogin ? '投个简历' : '去登录';
 
     // $http.get("/data/position.json?id=" + $state.params.id).success(function (resq){
     //     console.log(resq);
@@ -18,6 +19,9 @@ angular.module('app').controller('positionCtrl', ['$q', '$http', '$state', '$sco
         }).success(function (resq){
             console.log(resq);
             $scope.position = resq;
+            if(resq.posted) {
+                $scope.message = '已投递';
+            }
             def.resolve(resq);
         }).error(function (resq){
             def.reject(err);
@@ -35,5 +39,24 @@ angular.module('app').controller('positionCtrl', ['$q', '$http', '$state', '$sco
     getPosition().then( function (obj){
         getCompany(obj.companyId)
     })
+
+    $scope.go = function (){
+        // console.log(123);
+        if( $scope.message !== "已投递" ){
+            if( $scope.isLogin ){
+                $http.post('/data/handle.json', {
+                    id: $scope.position.id
+                }).success(function (resq){
+                    if( resq.state === 1){
+                        $log.info(resq);
+                        $scope.message = '已投递';
+                    }
+                })
+            }else{
+                // 登录
+                $state.go('login');
+            }
+        }
+    }
     
 }])
