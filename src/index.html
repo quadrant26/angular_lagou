@@ -19,5 +19,24 @@
 <script src="vendor/angular-cookies/angular-cookies.min.js"></script>
 <script src="vendor/angular-validation/dist/angular-validation.min.js"></script>
 <script src="js/index.js"></script>
+<!-- <script>
+console.log(window.Notification);
+window.Notification.requestPermission().then(function (result){
+    // console.log(result);
+})
+
+
+if( Notification.permission === "granted" ){
+    var notification = new Notification("开启 Notification", {
+        body: '可以加你为好友吗？',
+        icon: 'image/company-2.png'
+    });
+    
+    notification.onclick = function() {
+        console.log('英吹思婷' + new Date().toTimeString().split(' ')[0] + '加你为好友！');
+        notification.close();    
+    };
+}
+</script> -->
 </body>
 </html>
