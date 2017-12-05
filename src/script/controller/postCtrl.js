@@ -9,7 +9,6 @@ angular.module('app').controller('postCtrl', ['$http', '$scope', function ($http
 
     $http.get('/data/myPost.json').success(function (resq){
         $scope.list = resq;
-        console.log(resq);
     })
 
     $scope.filterByObj = {};
